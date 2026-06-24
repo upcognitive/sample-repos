@@ -1,0 +1,17 @@
+[project]
+name = "orkest"
+version = "0.1.0"
+description = "Orkest CLI"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[project.scripts]
+orkest = "orkest.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["orkest"]
