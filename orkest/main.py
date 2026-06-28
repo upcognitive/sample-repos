@@ -6,6 +6,10 @@ import sys
 def main() -> None:
     """Run the Orkest CLI."""
     if len(sys.argv) > 1 and sys.argv[1] == "serve":
+        from dotenv import load_dotenv
+
+        load_dotenv()
+
         import uvicorn
 
         uvicorn.run("orkest.api.router:app", host="0.0.0.0", port=8000, reload=False)
