@@ -9,6 +9,7 @@ from fastapi import FastAPI
 from orkest.api.agents import router as agents_router
 from orkest.api.errors import register_exception_handlers
 from orkest.api.middleware import RequestLoggingMiddleware
+from orkest.api.todos import router as todos_router
 from orkest.api.users import router as users_router
 from orkest.auth.router import router as auth_router
 from orkest.db.session import init_db
@@ -31,4 +32,5 @@ def create_app() -> FastAPI:
     app.include_router(auth_router)
     app.include_router(agents_router)
     app.include_router(users_router)
+    app.include_router(todos_router)
     return app
